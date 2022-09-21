@@ -1,0 +1,29 @@
+@import "variables.scss";
+
+#cuadritos{
+  border: $borde;
+  padding: 10px;
+  .cuadro{
+    border: 1px solid $amarillo;
+    &.rojo{
+      background-color: $rojo;
+    }
+    &.azul{
+      background-color: $azul;
+    }
+    &.verde{
+      background-color: $verde;
+    }
+  }
+}
+
+.cuadro{
+  &.rojo{
+    .texto-rojo{
+      color: $rojo;
+      font-family: $vic-favorite;
+      font-size: 30px;
+      border: $borde;
+    }
+  }
+}

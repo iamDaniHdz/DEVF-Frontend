@@ -1,6 +1,7 @@
 import './styles.login.css'
 import { useState, useEffect, Fragment } from 'react'
 import { loginAPI } from './api'
+import { Home } from '../'
 
 const Login = () => {
 
@@ -28,6 +29,9 @@ const Login = () => {
   return (
     <Fragment>
       <div className='container'>
+        {isAuthenticate ? (
+        <Home user={user} signOut={setIsAuthenticate}/> 
+        ) : (
         <div>
           <div>
             <input
@@ -52,6 +56,7 @@ const Login = () => {
             </button>
           </div>
         </div>
+        )}
         <div className='icon'>{!isAuthenticate ? '🔐' : '🔓'}</div>
       </div>
     </Fragment>

@@ -1,43 +1,12 @@
 import { Routes, Route, Link, Outlet } from "react-router-dom";
+import { Login, Home, Users } from "../"; 
 
-function NavigationMenu() {
-  return <h1>Home</h1>;
-}
-
-function Home() {
-  return <h1>Home</h1>;
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h1>Dashboard</h1>
-      <nav>
-        <Link to="/">Home</Link> <Link to="invoices">Invoices</Link>{" "}
-        <Link to="team">Team</Link>
-      </nav>
-      <hr />
-      <Outlet />
-    </div>
-  );
-}
-
-function Invoices() {
-  return <h1>Invoices</h1>;
-}
-
-function Team() {
-  return <h1>Team</h1>;
-}
-
-export default function App() {
+export default function Navigation() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="dashboard" element={<Dashboard />}>
-        <Route path="invoices" element={<Invoices />} />
-        <Route path="team" element={<Team />} />
-      </Route>
+      <Route path="/" element={<Login />} />
+      <Route path="dashboard" element={<Home />} />
+      <Route path="users" element={<Users />} />
     </Routes>
   );
 }

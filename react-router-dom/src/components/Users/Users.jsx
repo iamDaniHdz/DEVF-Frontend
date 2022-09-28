@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./styles.home.css";
+import "./styles.users.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Home = ({ user, signOut }) => {
+const Users = ({ user, signOut }) => {
   const [isAuthenticate, setIsAuthenticate] = useState(true);
 
   useEffect(() => {
@@ -28,12 +28,12 @@ const Home = ({ user, signOut }) => {
   return (
     <div className="container">
       <div>
-        <h1>Welcome</h1>
-        <Link to="/users">Users</Link>
+        <h1>Users</h1>
+        <Link to="/dashboard">Dashboard</Link>
         <div className="icon">{!isAuthenticate ? "🔐" : "🔓"}</div>
       </div>
     </div>
   );
 };
 
-export { Home };
+export { Users };

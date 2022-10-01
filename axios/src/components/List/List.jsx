@@ -31,12 +31,20 @@ const List = () => {
     });
 
     setResultados(resultado);
-      
+  }
+
+  const fuego = (event) =>{
+    let resultado = pokemones.filter((pokemon)=>{
+      return pokemon.type.includes("fire");
+    });
+
+    setResultados(resultado);
   }
 
   return (
     <div className="App container">
-      <input type="text" placeholder="Ingresa un nombre" onChange={buscar}/>
+      <input type="text" id="valor" placeholder="Ingresa un nombre" onChange={buscar}/>
+      <button className="button" onClick={fuego}>Fuego!</button>
       {
         resultados.map(pokemon => {
           return <Pokemon key={pokemon.id} abilities={pokemon.abilities} number={pokemon.number} id={pokemon.id} src={pokemon.ThumbnailImage} name={pokemon.name}></Pokemon>
